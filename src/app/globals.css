@@ -1,26 +1,154 @@
 @import "tailwindcss";
 
+/* Default = dark theme */
 :root {
+  /* Primary Colors */
+  --primary: #ff9f1c;
+  --primary-dark: #e55a2a;
+  --primary-light: #ff9f1c;
+
+  --secondary: #ffecd3;
+
+  /* Background Colors */
+  --background: #031728;
+  --background-secondary: #1a1f3a;
+  --background-tertiary: #0f1419;
+
+  /* Surface Colors */
+  --surface: #1a1f3a;
+  --surface-hover: #0f3460;
+
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #d1d5db;
+  --text-tertiary: #9ca3af;
+  --text-muted: #6b7280;
+
+  /* Border Colors */
+  --border: #374151;
+  --border-light: #4b5563;
+
+  /* Accent Colors */
+  --accent-blue: #0f3460;
+  --accent-purple: #533483;
+
+  /* Status Colors */
+  --success: #22c55e;
+  --warning: #fbbf24;
+  --error: #ef4444;
+  --info: #3b82f6;
+}
+
+/* Light Mode */
+.light {
+  /* Background Colors */
   --background: #ffffff;
-  --foreground: #171717;
+  --background-secondary: #f9fafb;
+  --background-tertiary: #f3f4f6;
+
+  /* Surface Colors */
+  --surface: #ffffff;
+  --surface-hover: #f3f4f6;
+
+  /* Text Colors */
+  --text-primary: #111827;
+  --text-secondary: #374151;
+  --text-tertiary: #6b7280;
+  --text-muted: #9ca3af;
+
+  /* Border Colors */
+  --border: #e5e7eb;
+  --border-light: #f3f4f6;
 }
 
+/* Tailwind v4 inline theme mapping */
 @theme inline {
+  /* Primary Colors */
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
+
+  --color-secondary: var(--secondary);
+
+  /* Background Colors */
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background-secondary: var(--background-secondary);
+  --color-background-tertiary: var(--background-tertiary);
+
+  /* Surface Colors */
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+
+  /* Text Colors */
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-text-muted: var(--text-muted);
+
+  /* Border Colors */
+  --color-border: var(--border);
+  --color-border-light: var(--border-light);
+
+  /* Accent Colors */
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-purple: var(--accent-purple);
+
+  /* Status Colors */
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --color-info: var(--info);
+
+  /* Animation */
+  --animate-shimmer: shimmer 8s linear infinite;
+
+  --breakpoint-desktop: 1440px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-text-primary;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-custom-desktop {
+    @media (min-width: 1440px) {
+      @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
+  }
+
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-text-primary mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-text-muted text-lg mb-12;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
