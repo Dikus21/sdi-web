@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { SecondaryButton, PrimaryButton } from "../Button";
+import { SecondaryButton, PrimaryButton } from "../../element/Button";
 
 export default function HeroSection() {
   return (

@@ -5,8 +5,8 @@ import {
   IoPeopleOutline,
   IoTvOutline,
 } from "react-icons/io5";
-import Card from "../Card";
-import Pill from "../Pill";
+import Card from "../../element/Card";
+import Pill from "../../element/Pill";
 
 export default function ExcellenceSection() {
   const excellences = [

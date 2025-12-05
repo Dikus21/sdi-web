@@ -3,7 +3,17 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  title: string;
+  description: string;
+  image: string;
+}
+
+export default function HeroSection({
+  title,
+  description,
+  image,
+}: HeroSectionProps) {
   return (
     <section className="relative">
       <div className="relative flex min-h-[70vh] sm:min-h-[80vh] items-center overflow-hidden">
@@ -21,7 +31,7 @@ export default function HeroSection() {
           className="absolute inset-0"
         >
           <Image
-            src="/background/about/bg-hero-update.png"
+            src={image}
             width={2000}
             height={2000}
             alt="Hero green energy"
@@ -37,7 +47,7 @@ export default function HeroSection() {
             animate="show"
             transition={{ delay: 0.08 }}
           >
-            Membawa Dampak Nyata Melalui Teknologi Ramah Lingkungan
+            {title}
           </motion.h1>
 
           <motion.p
@@ -46,8 +56,7 @@ export default function HeroSection() {
             animate="show"
             transition={{ delay: 0.16 }}
           >
-            Kenali tim, nilai, dan cara kerja kami dalam membangun solusi
-            pengelolaan limbah dan energi terbarukan.
+            {description}
           </motion.p>
         </div>
       </div>

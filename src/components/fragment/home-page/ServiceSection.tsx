@@ -1,7 +1,7 @@
 import { FaServer, FaCogs, FaTools, FaLightbulb } from "react-icons/fa";
-import { PrimaryButton } from "../Button";
-import Card from "../Card";
-import Pill from "../Pill";
+import { PrimaryButton } from "../../element/Button";
+import Card from "../../element/Card";
+import Pill from "../../element/Pill";
 
 export default function ServiceSection() {
   const services = [

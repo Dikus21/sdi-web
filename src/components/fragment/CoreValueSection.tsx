@@ -1,7 +1,7 @@
 import { FaBolt, FaRecycle } from "react-icons/fa";
-import { PrimaryButton } from "./Button";
-import Card from "./Card";
-import Pill from "./Pill";
+import { PrimaryButton } from "../element/Button";
+import Card from "../element/Card";
+import Pill from "../element/Pill";
 import {
   IoLockClosedOutline,
   IoMedalOutline,

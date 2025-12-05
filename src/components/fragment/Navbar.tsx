@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
-import { PrimaryButton } from "./Button";
+import { PrimaryButton } from "../element/Button";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -14,7 +14,7 @@ const Navbar = () => {
     { name: "Beranda", path: "/" },
     { name: "Tentang Kami", path: "/about" },
     { name: "Service Kami", path: "/services" },
-    { name: "Projek", path: "/projects" },
+    { name: "Kontak", path: "/contact" },
   ];
 
   const isActive = (path: string) => location === path;

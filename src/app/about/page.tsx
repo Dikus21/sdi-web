@@ -1,8 +1,8 @@
-import BackgroundSection from "@/components/about-page/BackgroundSection";
-import ExcellenceSection from "@/components/about-page/ExcellenceSection";
-import HeroSection from "@/components/about-page/HeroSection";
-import VisionMissionSection from "@/components/about-page/VisionMissionSection";
-import CoreValueSection from "@/components/CoreValueSection";
+import BackgroundSection from "@/components/fragment/about-page/BackgroundSection";
+import ExcellenceSection from "@/components/fragment/about-page/ExcellenceSection";
+import HeroSection from "@/components/fragment/HeroSection";
+import VisionMissionSection from "@/components/fragment/about-page/VisionMissionSection";
+import CoreValueSection from "@/components/fragment/CoreValueSection";
 import Image from "next/image";
 import React from "react";
 
@@ -30,7 +30,11 @@ export default function AboutUsPage() {
         alt="About background gradient 2"
         className="absolute 2xl:-left-1/8 -left-1/4 -top-1/20 h-full w-full"
       />
-      <HeroSection />
+      <HeroSection
+        title="Mitra Terpercaya dalam Integrasi Infrastruktur & Data"
+        description="Kami membantu organisasi menghadirkan sistem yang stabil, aman, dan terintegrasi — demi mendukung transformasi digital Indonesia."
+        image="/background/about/bg-hero-update.png"
+      />
       <BackgroundSection />
       <VisionMissionSection />
       <ExcellenceSection />

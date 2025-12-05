@@ -1,9 +1,9 @@
-import AboutSection from "@/components/home-page/AboutSection";
-import CoreValueSection from "@/components/CoreValueSection";
-import HeroSection from "@/components/home-page/HeroSection";
-import PertnerSection from "@/components/home-page/PartnerSection";
-import ProjectShowcaseSection from "@/components/home-page/ProjectShowcaseSection";
-import ServiceSection from "@/components/home-page/ServiceSection";
+import AboutSection from "@/components/fragment/home-page/AboutSection";
+import CoreValueSection from "@/components/fragment/CoreValueSection";
+import HeroSection from "@/components/fragment/home-page/HeroSection";
+import PertnerSection from "@/components/fragment/home-page/PartnerSection";
+import ProjectShowcaseSection from "@/components/fragment/home-page/ProjectShowcaseSection";
+import ServiceSection from "@/components/fragment/home-page/ServiceSection";
 import Image from "next/image";
 
 export default function Home() {

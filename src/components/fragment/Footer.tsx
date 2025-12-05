@@ -4,7 +4,7 @@ import {
   FaInstagram,
   FaLinkedinIn,
 } from "react-icons/fa";
-import { PrimaryButton } from "./Button";
+import { PrimaryButton } from "../element/Button";
 import Image from "next/image";
 import Link from "next/link";
 

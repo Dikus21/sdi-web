@@ -1,6 +1,6 @@
-import { PrimaryButton } from "../Button";
-import OrbitSystem from "../OrbitSystem";
-import Pill from "../Pill";
+import { PrimaryButton } from "../../element/Button";
+import OrbitSystem from "../../element/OrbitSystem";
+import Pill from "../../element/Pill";
 
 /**
  * Example: Client Showcase Section with Orbit System

@@ -1,6 +1,6 @@
 import React from "react";
 import { IoDiamondOutline } from "react-icons/io5";
-import Card from "../Card";
+import Card from "../../element/Card";
 
 export default function VisionMissionSection() {
   return (

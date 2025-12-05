@@ -1,5 +1,5 @@
-import { PrimaryButton } from "../Button";
-import Pill from "../Pill";
+import { PrimaryButton } from "../../element/Button";
+import Pill from "../../element/Pill";
 
 export default function AboutSection() {
   return (

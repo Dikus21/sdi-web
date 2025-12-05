@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { FiChevronLeft, FiChevronRight, FiInfo, FiX } from "react-icons/fi";
 import { useSwipeable } from "react-swipeable";
-import Pill from "../Pill";
+import Pill from "../../element/Pill";
 import Image from "next/image";
 
 interface Project {

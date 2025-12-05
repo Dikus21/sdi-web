@@ -9,6 +9,7 @@ interface CardProps {
   className?: string;
   index?: number;
   titleColor?: string;
+  titleSize?: string;
 }
 
 const Card = ({
@@ -20,6 +21,7 @@ const Card = ({
   className = "",
   index,
   titleColor = "foreground",
+  titleSize = "text-xl",
 }: CardProps) => {
   const borderClass = showBorder ? "border border-[#FF9F1C]/20" : "";
   const bgClass = "bg-transparent";
@@ -47,7 +49,7 @@ const Card = ({
       {icon && <div className="text-primary text-4xl lg:text-5xl">{icon}</div>}
 
       {/* Title */}
-      <h2 className={`text-xl font-medium text-${titleColor}`}>{title}</h2>
+      <h2 className={`${titleSize} font-medium text-${titleColor}`}>{title}</h2>
 
       {/* Description */}
       <p className="text-white text-sm font-light">{description}</p>
