@@ -8,10 +8,10 @@ import { PrimaryButton } from "./Button";
 import Image from "next/image";
 import Link from "next/link";
 
-const Footer = () => {
+export default function Footer() {
   return (
     <footer className="text-white">
-      <div className="py-16">
+      <div className="flex flex-col">
         {/* CTA Section */}
         <div className="py-20 relative">
           <div className="flex justify-center w-full h-full">
@@ -138,13 +138,10 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-
         <div className="border-t border-white/10 pt-8 text-center text-gray-400">
           <p>PT Solinex Data Integrasi Copyright © 2025. All rights reserved</p>
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

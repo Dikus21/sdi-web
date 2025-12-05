@@ -5,13 +5,13 @@ export default function HeroSection() {
   return (
     <section className="relative flex justify-center overflow-hidden pt-4 sm:pb-0 pb-12">
       {/* Background Image */}
-      <div className="absolute sm:relative z-0 w-full h-full flex justify-center">
+      <div className="absolute min-h-[10vh] sm:relative z-0 w-full h-full flex justify-center">
         <Image
           src="/background/home/bg-hero.png"
           alt="Hero Image"
           width={1440}
-          height={800}
-          className="object-contain"
+          height={1100}
+          className="object-contain w-full"
         />
       </div>
 

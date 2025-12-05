@@ -8,6 +8,7 @@ interface CardProps {
   showBorder?: boolean;
   className?: string;
   index?: number;
+  titleColor?: string;
 }
 
 const Card = ({
@@ -18,10 +19,9 @@ const Card = ({
   showBorder = true,
   className = "",
   index,
+  titleColor = "foreground",
 }: CardProps) => {
-  const borderClass = showBorder
-    ? "border border-border border-[#FF9F1C]/20"
-    : "";
+  const borderClass = showBorder ? "border border-[#FF9F1C]/20" : "";
   const bgClass = "bg-transparent";
 
   const alignmentClass = {
@@ -37,7 +37,7 @@ const Card = ({
         ${bgClass} 
         ${borderClass} 
         rounded-xl p-6 lg:p-8 
-        flex flex-col gap-4
+        flex flex-col gap-5
         ${alignmentClass}
         hover:border-primary transition-all duration-300
         ${className}
@@ -47,10 +47,10 @@ const Card = ({
       {icon && <div className="text-primary text-4xl lg:text-5xl">{icon}</div>}
 
       {/* Title */}
-      <h2 className="text-xl font-medium text-foreground">{title}</h2>
+      <h2 className={`text-xl font-medium text-${titleColor}`}>{title}</h2>
 
       {/* Description */}
-      <p className="text-secondary text-sm font-light">{description}</p>
+      <p className="text-white text-sm font-light">{description}</p>
     </div>
   );
 };

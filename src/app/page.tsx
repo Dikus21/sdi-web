@@ -1,5 +1,5 @@
 import AboutSection from "@/components/home-page/AboutSection";
-import CoreValueSection from "@/components/home-page/CoreValueSection";
+import CoreValueSection from "@/components/CoreValueSection";
 import HeroSection from "@/components/home-page/HeroSection";
 import PertnerSection from "@/components/home-page/PartnerSection";
 import ProjectShowcaseSection from "@/components/home-page/ProjectShowcaseSection";
