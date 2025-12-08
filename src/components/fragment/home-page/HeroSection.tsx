@@ -12,6 +12,7 @@ export default function HeroSection() {
           width={1440}
           height={1100}
           className="object-contain w-full"
+          priority
         />
       </div>
 
