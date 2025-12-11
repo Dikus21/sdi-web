@@ -1,18 +1,40 @@
-import { PrimaryButton } from "../../element/Button";
-import Pill from "../../element/Pill";
+"use client";
+import { motion } from "framer-motion";
+import { PrimaryButton } from "@/components/element/Button";
+import Pill from "@/components/element/Pill";
+import {
+  fadeInLeft,
+  fadeInRight,
+  staggerContainer,
+  defaultTransition,
+  viewportOnce,
+} from "@/lib/motion";
 
 export default function AboutSection() {
   return (
     <section className="py-5 relative overflow-hidden">
-      <div className="container-custom relative z-10">
+      <motion.div
+        className="container-custom relative z-10"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+      >
         <div className="max-w-7xl sm:grid sm:grid-cols-2 flex flex-col gap-5">
-          <div className="flex flex-col gap-5">
+          {/* Left Column */}
+          <motion.div
+            className="flex flex-col gap-5"
+            variants={fadeInLeft}
+            transition={defaultTransition}
+          >
             <Pill className="w-fit">Tentang Solinex</Pill>
             <p className="text-[40px] leading-snug font-medium lg:w-[470px]">
               Membangun Fondasi Teknologi yang Terkoneksi & Terkelola
             </p>
-          </div>
-          <div>
+          </motion.div>
+
+          {/* Right Column */}
+          <motion.div variants={fadeInRight} transition={defaultTransition}>
             <p className="text-secondary mb-5 leading-snug">
               PT Solinex Data Integrasi adalah perusahaan penyedia solusi
               infrastruktur teknologi informasi yang berfokus pada pengadaan
@@ -26,9 +48,9 @@ export default function AboutSection() {
               Indonesia.
             </p>
             <PrimaryButton href="/about">Lihat Selengkapnya</PrimaryButton>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

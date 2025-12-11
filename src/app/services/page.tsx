@@ -1,4 +1,3 @@
-"use client";
 import HeroSection from "@/components/fragment/HeroSection";
 import ServicesSection from "@/components/fragment/service-page/ServicesSection";
 import Image from "next/image";

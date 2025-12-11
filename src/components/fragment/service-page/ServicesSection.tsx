@@ -1,8 +1,18 @@
+"use client";
+import { motion } from "framer-motion";
 import Card from "@/components/element/Card";
 import React, { ReactNode } from "react";
 import { FaServer, FaClipboardList } from "react-icons/fa";
 import { MdOutlineIntegrationInstructions } from "react-icons/md";
 import { RiCustomerService2Line } from "react-icons/ri";
+import {
+  fadeInLeft,
+  fadeInRight,
+  staggerContainer,
+  staggerFast,
+  defaultTransition,
+  viewportOnce,
+} from "@/lib/motion";
 
 interface ServiceItem {
   title: string;
@@ -15,10 +25,11 @@ interface ServiceSectionProps {
   description: string;
   items: ServiceItem[];
   reversed?: boolean;
+  index: number;
 }
 
 // Sub-component untuk item di sebelah kanan dengan nomor
-const ServiceItem = ({
+const ServiceItemComponent = ({
   number,
   title,
   description,
@@ -51,15 +62,29 @@ const ServiceSection = ({
   items,
   reversed = false,
 }: ServiceSectionProps) => {
+  // Alternate animation direction based on reversed prop
+  const cardVariant = reversed ? fadeInRight : fadeInLeft;
+  const itemsVariant = reversed ? fadeInLeft : fadeInRight;
+
   return (
-    <section className="w-full">
+    <motion.section
+      className="w-full"
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
+    >
       <div
         className={`flex flex-col ${
           reversed ? "lg:flex-row-reverse" : "lg:flex-row"
         } gap-10 lg:gap-16`}
       >
-        {/* Left Side */}
-        <div className="lg:w-5/12 w-full">
+        {/* Left Side - Card */}
+        <motion.div
+          className="lg:w-5/12 w-full"
+          variants={cardVariant}
+          transition={defaultTransition}
+        >
           <Card
             icon={icon}
             title={title}
@@ -67,27 +92,35 @@ const ServiceSection = ({
             description={description}
             showBorder={false}
           />
-        </div>
+        </motion.div>
 
         {/* Right Side - Service Items Grid */}
-        <div className="flex flex-col lg:w-7/12 w-full">
-          {items.map((item, index) => (
-            <div
-              key={index}
+        <motion.div
+          className="flex flex-col lg:w-7/12 w-full"
+          variants={staggerFast}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+        >
+          {items.map((item, itemIndex) => (
+            <motion.div
+              key={itemIndex}
               className={
-                index !== 0 ? "border-t border-white/20 pt-5 mt-5" : ""
+                itemIndex !== 0 ? "border-t border-white/20 pt-5 mt-5" : ""
               }
+              variants={itemsVariant}
+              transition={{ ...defaultTransition, delay: itemIndex * 0.1 }}
             >
-              <ServiceItem
-                number={index + 1}
+              <ServiceItemComponent
+                number={itemIndex + 1}
                 title={item.title}
                 description={item.description}
               />
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
@@ -192,18 +225,23 @@ export default function ServicesSection() {
   return (
     <section className="container-custom flex flex-col w-full py-10 lg:py-16">
       {servicesData.map((service, index) => (
-        <div
+        <motion.div
           key={index}
           className={index !== 0 ? "border-t border-white/20 pt-12 mt-12" : ""}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={viewportOnce}
+          transition={{ duration: 0.3 }}
         >
           <ServiceSection
-            key={index}
             icon={service.icon}
             title={service.title}
             description={service.description}
             items={service.items}
+            reversed={index % 2 !== 0}
+            index={index}
           />
-        </div>
+        </motion.div>
       ))}
     </section>
   );

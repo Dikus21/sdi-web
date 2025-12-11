@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import { motion } from "framer-motion";
 import {
   IoMedicalOutline,
   IoSparklesOutline,
@@ -7,6 +9,14 @@ import {
 } from "react-icons/io5";
 import Card from "../../element/Card";
 import Pill from "../../element/Pill";
+import {
+  fadeInUp,
+  scaleUp,
+  staggerContainer,
+  staggerSlow,
+  defaultTransition,
+  viewportOnce,
+} from "@/lib/motion";
 
 export default function ExcellenceSection() {
   const excellences = [
@@ -35,11 +45,26 @@ export default function ExcellenceSection() {
         "Kami menyediakan dukungan teknis dan monitoring 24/7 agar sistem Anda selalu optimal.",
     },
   ];
+
   return (
     <section className="container-custom">
-      <div className="flex flex-col gap-5 items-center">
-        <Pill>Keunggulan Kami</Pill>
-        <div className="flex flex-col gap-4 text-white text-center">
+      <motion.div
+        className="flex flex-col gap-5 items-center"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+      >
+        {/* Header */}
+        <motion.div variants={fadeInUp} transition={defaultTransition}>
+          <Pill>Keunggulan Kami</Pill>
+        </motion.div>
+
+        <motion.div
+          className="flex flex-col gap-4 text-white text-center"
+          variants={fadeInUp}
+          transition={defaultTransition}
+        >
           <h2 className="font-medium text-3xl sm:text-4xl">
             Mengapa Memilih Solinex?
           </h2>
@@ -48,20 +73,33 @@ export default function ExcellenceSection() {
             yang memahami kebutuhan operasional dan tantangan digitalisasi
             setiap organisasi
           </p>
-        </div>
-        <div className="flex sm:flex-row flex-col sm:gap-8 gap-4">
+        </motion.div>
+
+        {/* Cards */}
+        <motion.div
+          className="flex sm:flex-row flex-col sm:gap-8 gap-4"
+          variants={staggerSlow}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+        >
           {excellences.map((excellence, index) => (
-            <Card
-              icon={excellence.icon}
-              title={excellence.title}
-              description={excellence.description}
-              variant="centered"
+            <motion.div
               key={index}
-              index={index}
-            />
+              variants={scaleUp}
+              transition={{ ...defaultTransition, delay: index * 0.12 }}
+            >
+              <Card
+                icon={excellence.icon}
+                title={excellence.title}
+                description={excellence.description}
+                variant="centered"
+                index={index}
+              />
+            </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

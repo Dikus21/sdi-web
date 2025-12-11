@@ -1,3 +1,13 @@
+"use client";
+import {
+  staggerContainer,
+  viewportOnce,
+  fadeInLeft,
+  defaultTransition,
+  fadeInRight,
+  slowTransition,
+} from "@/lib/motion";
+import { motion } from "framer-motion";
 import { PrimaryButton } from "../../element/Button";
 import OrbitSystem from "../../element/OrbitSystem";
 import Pill from "../../element/Pill";
@@ -50,19 +60,33 @@ const PertnerSection = () => {
 
   return (
     <section className="w-full py-20 overflow-hidden">
-      <div className="container-custom">
+      <motion.div
+        className="container-custom"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+      >
         <div className="flex flex-col lg:flex-row items-center w-full">
           {/* Left Content */}
-          <div className="flex flex-col gap-5 items-start w-full">
+          <motion.div
+            className="flex flex-col gap-5 items-start w-full"
+            variants={fadeInLeft}
+            transition={defaultTransition}
+          >
             <Pill>Partner Kami</Pill>
             <h2 className="text-white text-3xl lg:text-[40px] font-medium leading-tight">
               Mereka Yang Bekerjasama Dengan Kami
             </h2>
             <PrimaryButton href="/contact">Hubungi Kami</PrimaryButton>
-          </div>
+          </motion.div>
 
           {/* Right Content - Orbit System */}
-          <div className="relative w-full flex lg:justify-end justify-center">
+          <motion.div
+            className="relative w-full flex lg:justify-end justify-center"
+            variants={fadeInRight}
+            transition={slowTransition}
+          >
             <OrbitSystem
               rings={orbitConfig}
               centerSize={0}
@@ -71,9 +95,9 @@ const PertnerSection = () => {
               }
               maxWidth={500}
             />
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
