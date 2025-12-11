@@ -80,7 +80,7 @@ export default function FormSection() {
   };
 
   return (
-    <section className="container-custom w-full max-w-[800]">
+    <section className="container-custom w-full max-w-[800] z-10 pb-10">
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
         <h2 id="contact-form-title" className="sr-only">
           Contact form

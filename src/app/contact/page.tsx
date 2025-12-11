@@ -10,7 +10,7 @@ export default function ContactPage() {
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1983.2947955823115!2d106.82108207094075!3d-6.1856412138851775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f4289385f2f7%3A0xc0510d88bba82e2f!2sThamrin%20Menara%20Tower%2C%20Jl.%20M.H.%20Thamrin%20No.3%2C%20RT.10%2FRW.10%2C%20Kebon%20Sirih%2C%20Menteng%2C%20Central%20Jakarta%20City%2C%20Jakarta%2010340!5e0!3m2!1sen!2sid!4v1765176506066!5m2!1sen!2sid";
   return (
     <div>
-      <section className="relative flex flex-col justify-center overflow-hidden pt-4 sm:pb-0 pb-12 gap-40">
+      <section className="relative flex flex-col justify-center overflow-hidden pt-4 sm:pb-0 pb-12 gap-5">
         {/* Background Image */}
         <div className="min-h-screen absolute z-0 w-full h-full flex justify-center">
           <Image
@@ -53,9 +53,9 @@ export default function ContactPage() {
               <div className="flex flex-col sm:flex-row justify-center gap-4 items-center"></div>
             </div>
           </div>
-          <FormSection />
         </div>
-        <section className="w-full bg-background pb-10 z-10">
+        <FormSection />
+        <section className="w-full bg-background py-10 z-10">
           <div className="container-custom flex lg:flex-row flex-col lg:justify-between lg:items-center gap-5">
             {/* {Contact} */}
             <div className="flex flex-col gap-3.5 w-full max-w-[470]">
