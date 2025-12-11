@@ -48,9 +48,8 @@ export default function Home() {
           alt=""
           aria-hidden="true"
           src="/background/bg-gradient-1.png"
-          width={960}
-          height={334}
-          quality={40}
+          width={1440}
+          height={500}
           loading="lazy"
           sizes="(max-width: 768px) 100vw, 50vw"
           className="pointer-events-none absolute w-full h-full lg:left-1/4 left-1/2 -top-40"
@@ -67,9 +66,8 @@ export default function Home() {
           src="/background/bg-gradient-2.png"
           alt=""
           aria-hidden="true"
-          width={960}
-          height={334}
-          quality={40}
+          width={1440}
+          height={500}
           loading="lazy"
           sizes="(max-width: 768px) 100vw, 50vw"
           className="pointer-events-none absolute w-full h-full md:-left-80 -left-30 -top-1/2"
@@ -80,9 +78,8 @@ export default function Home() {
           alt=""
           aria-hidden="true"
           src="/background/bg-gradient-3.png"
-          width={960}
-          height={334}
-          quality={40}
+          width={1440}
+          height={500}
           loading="lazy"
           sizes="(max-width: 768px) 100vw, 50vw"
           className="pointer-events-none absolute w-full h-full sm:-bottom-60 md:-left-80 -left-40"

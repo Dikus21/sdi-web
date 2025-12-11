@@ -96,6 +96,7 @@ export default function ServiceSection() {
                 title={service.title}
                 icon={service.icon}
                 variant="centered"
+                className="h-full"
               />
             </motion.div>
           ))}

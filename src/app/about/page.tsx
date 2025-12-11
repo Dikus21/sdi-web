@@ -33,9 +33,8 @@ export default function AboutUsPage() {
         src="/background/bg-gradient-1.png"
         alt=""
         aria-hidden="true"
-        width={960}
-        height={334}
-        quality={40}
+        width={1440}
+        height={500}
         loading="lazy"
         sizes="(max-width: 768px) 100vw, 50vw"
         className="absolute -top-1/4 md:-right-1/4 sm:-right-1/3 -right-3/5 w-full h-full"
@@ -44,9 +43,8 @@ export default function AboutUsPage() {
         src="/background/bg-gradient-1.png"
         alt=""
         aria-hidden="true"
-        width={960}
-        height={334}
-        quality={40}
+        width={1440}
+        height={500}
         loading="lazy"
         sizes="(max-width: 768px) 100vw, 50vw"
         className="absolute top-1/4 md:-right-1/4 sm:-right-1/3 -right-3/5 w-full h-3/4 lg:visible invisible"
@@ -55,9 +53,8 @@ export default function AboutUsPage() {
         src="/background/bg-gradient-2.png"
         alt=""
         aria-hidden="true"
-        width={960}
-        height={334}
-        quality={40}
+        width={1440}
+        height={500}
         loading="lazy"
         sizes="(max-width: 768px) 100vw, 50vw"
         className="absolute 2xl:-left-1/8 -left-1/4 -top-1/20 h-full w-full"

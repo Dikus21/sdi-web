@@ -95,6 +95,7 @@ export default function ExcellenceSection() {
                 description={excellence.description}
                 variant="centered"
                 index={index}
+                className="h-full"
               />
             </motion.div>
           ))}
