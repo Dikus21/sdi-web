@@ -75,7 +75,7 @@ export default function AdminNotification({
             {"\u00A0\u200C\u200B".repeat(80)}
           </div>
 
-          <Container className="mx-auto my-6 w-[600px]">
+          <Container className="mx-auto my-6 w-[600px] ">
             {/* Header - background putih dengan border hijau */}
             <Section
               style={{
@@ -255,7 +255,7 @@ export default function AdminNotification({
                   </Text>
                   <Section
                     style={{
-                      backgroundColor: brand.colors.bg,
+                      backgroundColor: "#f9fafb",
                       borderRadius: "8px",
                       padding: "12px 16px",
                     }}

@@ -8,6 +8,7 @@ interface ButtonProps {
   variant?: "primary" | "secondary" | "outline" | "ghost";
   notchVariant?: "top-right" | "bottom-left" | "both" | "none"; // Tambah bottom-left
   size?: "sm" | "md" | "lg";
+  type?: "button" | "submit" | "reset";
   fullWidth?: boolean;
   disabled?: boolean;
   showArrow?: boolean;
@@ -19,6 +20,7 @@ const Button = ({
   children,
   onClick,
   href,
+  type = "button",
   variant = "primary",
   notchVariant = "top-right", // Default: notch kanan atas aja
   size = "md",
@@ -116,6 +118,7 @@ const Button = ({
       disabled={disabled}
       className={classes}
       style={notchStyles[notchVariant]}
+      type={type}
     >
       {content}
     </button>
