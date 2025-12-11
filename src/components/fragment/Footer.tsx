@@ -130,7 +130,6 @@ export default function Footer() {
                   {socialLinks.map((social, index) => (
                     <motion.a
                       key={index}
-                      href={social.href}
                       className="bg-white/10 hover:bg-primary p-2 rounded-full transition-colors duration-300"
                       whileHover={{ scale: 1.1, y: -2 }}
                       whileTap={{ scale: 0.95 }}
