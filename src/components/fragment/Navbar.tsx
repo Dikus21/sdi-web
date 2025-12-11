@@ -49,16 +49,14 @@ const Navbar = () => {
                   }`}
                 >
                   {item.name}
-                  {/* Active indicator */}
+                  {/* Active indicator tanpa layoutId */}
                   {isActive(item.path) && (
                     <motion.div
                       className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
-                      layoutId="activeTab"
-                      transition={{
-                        type: "spring",
-                        stiffness: 300,
-                        damping: 30,
-                      }}
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: 1 }}
+                      transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                      style={{ originX: 0.5 }}
                     />
                   )}
                 </Link>
