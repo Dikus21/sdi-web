@@ -45,7 +45,7 @@ export default function Footer() {
 
   const contactInfo = [
     process.env.NEXT_PUBLIC_EMAIL_TO ?? "info@solinex.co.id",
-    `+${process.env.NEXT_PUBLIC_WA_NUMBER} ?? "622211166999"`,
+    `+${process.env.NEXT_PUBLIC_WA_NUMBER ?? "622211166999"}`,
     "Jakarta, Indonesia",
   ];
 
