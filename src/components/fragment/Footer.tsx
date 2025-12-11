@@ -44,8 +44,8 @@ export default function Footer() {
   ];
 
   const contactInfo = [
-    "info@solinex.co.id",
-    "021 27893462",
+    process.env.NEXT_PUBLIC_EMAIL_TO ?? "info@solinex.co.id",
+    `+${process.env.NEXT_PUBLIC_WA_NUMBER} ?? "622211166999"`,
     "Jakarta, Indonesia",
   ];
 

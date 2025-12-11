@@ -5,7 +5,27 @@ import VisionMissionSection from "@/components/fragment/about-page/VisionMission
 import CoreValueSection from "@/components/fragment/CoreValueSection";
 import Image from "next/image";
 import React from "react";
+import { Metadata } from "next";
+import { pageMetadata, siteConfig } from "@/lib/seo-config";
 
+export const metadata: Metadata = {
+  title: pageMetadata.about.title,
+  description: pageMetadata.about.description,
+  keywords: pageMetadata.about.keywords,
+  alternates: {
+    canonical: `${siteConfig.url}/about`,
+  },
+  openGraph: {
+    title: `${pageMetadata.about.title} | ${siteConfig.name}`,
+    description: pageMetadata.about.description,
+    url: `${siteConfig.url}/about`,
+    type: "website",
+  },
+  twitter: {
+    title: `${pageMetadata.about.title} | ${siteConfig.name}`,
+    description: pageMetadata.about.description,
+  },
+};
 export default function AboutUsPage() {
   return (
     <div className="relative flex flex-col gap-10 sm:gap-20 w-full overflow-hidden">

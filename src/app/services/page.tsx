@@ -1,8 +1,28 @@
 import HeroSection from "@/components/fragment/HeroSection";
 import ServicesSection from "@/components/fragment/service-page/ServicesSection";
+import { pageMetadata, siteConfig } from "@/lib/seo-config";
+import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
 
+export const metadata: Metadata = {
+  title: pageMetadata.services.title,
+  description: pageMetadata.services.description,
+  keywords: pageMetadata.services.keywords,
+  alternates: {
+    canonical: `${siteConfig.url}/services`,
+  },
+  openGraph: {
+    title: `${pageMetadata.services.title} | ${siteConfig.name}`,
+    description: pageMetadata.services.description,
+    url: `${siteConfig.url}/services`,
+    type: "website",
+  },
+  twitter: {
+    title: `${pageMetadata.services.title} | ${siteConfig.name}`,
+    description: pageMetadata.services.description,
+  },
+};
 export default function page() {
   return (
     <div className="relative w-full overflow-hidden">

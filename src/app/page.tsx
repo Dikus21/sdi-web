@@ -5,7 +5,27 @@ import PertnerSection from "@/components/fragment/home-page/PartnerSection";
 import ProjectShowcaseSection from "@/components/fragment/home-page/ProjectShowcaseSection";
 import ServiceSection from "@/components/fragment/home-page/ServiceSection";
 import Image from "next/image";
+import { Metadata } from "next";
+import { pageMetadata, siteConfig } from "@/lib/seo-config";
 
+export const metadata: Metadata = {
+  title: pageMetadata.home.title,
+  description: pageMetadata.home.description,
+  keywords: pageMetadata.home.keywords,
+  alternates: {
+    canonical: siteConfig.url,
+  },
+  openGraph: {
+    title: `${siteConfig.name} | ${pageMetadata.home.title}`,
+    description: pageMetadata.home.description,
+    url: siteConfig.url,
+    type: "website",
+  },
+  twitter: {
+    title: `${siteConfig.name} | ${pageMetadata.home.title}`,
+    description: pageMetadata.home.description,
+  },
+};
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
