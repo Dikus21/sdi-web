@@ -35,14 +35,16 @@ export default function HeroSection({
               ease: "easeOut",
             },
           }}
-          className="absolute inset-0"
+          className="absolute inset-0 aspect-1440/500"
         >
           <Image
             src={image}
-            width={2000}
-            height={2000}
-            alt="Hero green energy"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1200px"
             className="h-full w-full object-cover"
+            alt=""
+            aria-hidden="true"
+            fill
+            quality={70}
             priority
           />
         </motion.div>

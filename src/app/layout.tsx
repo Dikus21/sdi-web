@@ -106,7 +106,6 @@ export const metadata: Metadata = {
       { url: "/icon.svg", type: "image/svg+xml" },
     ],
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
-    shortcut: "/favicon-16x16.png",
   },
 
   // Manifest

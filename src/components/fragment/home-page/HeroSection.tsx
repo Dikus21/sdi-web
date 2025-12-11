@@ -21,14 +21,18 @@ export default function HeroSection() {
         animate="visible"
         transition={{ duration: 1, ease: "easeOut" }}
       >
-        <Image
-          src="/background/home/bg-hero.png"
-          alt="Hero Image"
-          width={1440}
-          height={1100}
-          className="object-contain w-full"
-          priority
-        />
+        <div className="relative w-full aspect-1440/1100">
+          <Image
+            src="/background/home/bg-hero.png"
+            alt=""
+            aria-hidden="true"
+            fill
+            quality={70}
+            priority
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1200px"
+            className="object-contain"
+          />
+        </div>
       </motion.div>
 
       {/* Content */}

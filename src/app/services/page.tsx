@@ -28,16 +28,24 @@ export default function page() {
     <div className="relative w-full overflow-hidden">
       <Image
         src="/background/bg-gradient-1.png"
-        width={2000}
-        height={500}
-        alt="About background gradient"
+        alt=""
+        aria-hidden="true"
+        width={960}
+        height={334}
+        quality={40}
+        loading="lazy"
+        sizes="(max-width: 768px) 100vw, 50vw"
         className="absolute sm:-top-1/10 -top-1/4 xl:-right-1/4 sm:-right-1/3 -right-3/5 w-full h-full"
       />
       <Image
         src="/background/bg-gradient-2.png"
-        width={2000}
-        height={500}
-        alt="About background gradient 2"
+        alt=""
+        aria-hidden="true"
+        width={960}
+        height={334}
+        quality={40}
+        loading="lazy"
+        sizes="(max-width: 768px) 100vw, 50vw"
         className="absolute 2xl:-left-1/8 -left-1/4 top-1/8 h-full w-full"
       />
       <HeroSection

@@ -31,28 +31,37 @@ export default function ContactPage() {
       <div className="min-h-screen absolute z-0 w-full h-full flex justify-center">
         <Image
           src="/background/contact/bg-hero.png"
-          alt="Hero Image"
-          width={1440}
-          height={1100}
+          alt=""
+          aria-hidden="true"
+          width={960}
+          height={334}
+          quality={40}
+          loading="lazy"
+          sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover w-full h-full scale-100"
-          priority
         />
       </div>
       <Image
         src="/background/bg-gradient-1.png"
-        alt="Hero Image"
-        width={1440}
-        height={1100}
+        alt=""
+        aria-hidden="true"
+        width={960}
+        height={334}
+        quality={40}
+        loading="lazy"
+        sizes="(max-width: 768px) 100vw, 50vw"
         className="object-cover w-full h-full scale-100 absolute lg:-right-1/2 lg:top-0 -right-1/2 top-1/4"
-        priority
       />
       <Image
         src="/background/bg-gradient-3.png"
-        alt="Hero Image"
-        width={1440}
-        height={1100}
+        alt=""
+        aria-hidden="true"
+        width={960}
+        height={334}
+        quality={40}
+        loading="lazy"
+        sizes="(max-width: 768px) 100vw, 50vw"
         className="object-cover w-full h-full scale-100 absolute -left-1/2"
-        priority
       />
       {/* Content */}
       <HeroSection />

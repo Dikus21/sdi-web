@@ -226,30 +226,29 @@ const ProjectShowcaseSection = () => {
                 )}
               </motion.button>
 
-              <AnimatePresence>
-                {isDescriptionOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div
-                      className="max-w-sm flex flex-col gap-2 bg-primary py-6 px-8"
-                      style={{
-                        clipPath:
-                          "polygon(30px 0, 100% 0, 100% 100%, 0 100%, 0 30px)",
-                      }}
-                    >
-                      <h3 className="text-lg font-medium text-black">
-                        {currentProject.title}
-                      </h3>
-                      <p className="text-black font-light leading-tight text-sm">
-                        {currentProject.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                )}
+              <AnimatePresence initial={false} custom={direction} mode="wait">
+                <motion.div
+                  key={currentIndex}
+                  custom={direction}
+                  variants={slideVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+                  className="relative aspect-1440/500"
+                >
+                  <Image
+                    fill
+                    src={currentProject.image}
+                    alt={currentProject.title}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 95vw, 1400px"
+                    quality={75}
+                    priority={currentIndex === 0}
+                    loading={currentIndex === 0 ? "eager" : "lazy"}
+                    className="object-cover select-none pointer-events-none"
+                    draggable={false}
+                  />
+                </motion.div>
               </AnimatePresence>
             </div>
           </div>
