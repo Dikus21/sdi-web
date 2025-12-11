@@ -35,11 +35,9 @@ const baseUrl = process.env.NEXT_PUBLIC_SITE_URL
 export default function ContactReceipt({
   name,
   topic,
-  phone = "085285849686",
   orgName = "PT Rimbun Daur Alam",
 }: Props) {
   const org = orgName ?? brand.org;
-  const supportPhone = phone ?? brand.phone;
   const displayName = name ? name.toUpperCase() : "CUSTOMER";
 
   const previewText = `Halo ${displayName}, terima kasih telah menghubungi ${org}. Kami telah menerima permintaan Anda${topic ? ` untuk ${topic}` : ""} dan akan segera menghubungi Anda kembali.`;
@@ -75,7 +73,7 @@ export default function ContactReceipt({
             {/* Logo header */}
             <Section className="text-center">
               <Img
-                src={`${baseUrl}/logo-rda.png`}
+                src={`${baseUrl}/logo.png`}
                 alt={`${org} logo`}
                 width="50"
                 height="50"

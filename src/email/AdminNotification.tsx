@@ -85,7 +85,7 @@ export default function AdminNotification({
               className="rounded-t-2xl px-8 py-6 text-center"
             >
               <Img
-                src={`${baseUrl}/logo-rda.png`}
+                src={`${baseUrl}/logo.png`}
                 alt="Logo"
                 width="50"
                 height="50"
