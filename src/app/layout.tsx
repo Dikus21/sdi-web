@@ -141,7 +141,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" />
-        <link
+        {/* <link
           rel="apple-touch-icon"
           sizes="180x180"
           href="/apple-touch-icon.png"
@@ -158,7 +158,7 @@ export default function RootLayout({
           sizes="16x16"
           href="/favicon-16x16.png"
         />
-        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="manifest" href="/site.webmanifest" /> */}
         <meta name="apple-mobile-web-app-title" content="Solinex" />
         {/* Preconnect untuk performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
